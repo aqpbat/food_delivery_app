@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery_app/components/my_button.dart';
+import 'package:food_delivery_app/components/my_text_field.dart';
 
 class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+
+  LoginPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +30,19 @@ class LoginPage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 25),
-            TextField(),
+            MyTextField(
+              controller: emailController,
+              hintText: 'Email',
+              obscureText: false,
+            ),
+            const SizedBox(height: 25),
+            MyTextField(
+              controller: passwordController,
+              hintText: 'Password',
+              obscureText: true,
+            ),
+            const SizedBox(height: 25),
+            MyButton(onTap: () {}, text: "Sign in")
           ],
         ),
       ),
